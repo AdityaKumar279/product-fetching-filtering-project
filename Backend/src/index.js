@@ -42,6 +42,10 @@ app.use((err, req, res, next) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Product API. Use /api/products to fetch products.');
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`\n✓ Server running on http://localhost:${PORT}`);

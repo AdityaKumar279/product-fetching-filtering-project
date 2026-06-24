@@ -3,9 +3,9 @@ import axios from 'axios';
 
 export const ProductContext = createContext();
 
-const API_BASE_URL = 'http://localhost:5000/api/products';
 
 export const ProductProvider = ({ children }) => {
+  const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -31,7 +31,7 @@ export const ProductProvider = ({ children }) => {
           params.category = category;
         }
 
-        const response = await axios.get(API_BASE_URL, { params });
+        const response = await axios.get(`${API_BASE_URL}/api/products`, { params });
         console.log(response);
 
         const { success, data, nextCursor: newNextCursor, hasMore: newHasMore } = response.data;
