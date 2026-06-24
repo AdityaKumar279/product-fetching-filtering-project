@@ -1,0 +1,27 @@
+{
+  "name": "codevector-backend",
+  "version": "1.0.0",
+  "description": "Backend assignment with optimized database schema and bulk seed script",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "seed": "node src/scripts/seed.js",
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "bulk-insert",
+    "seed"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "@faker-js/faker": "^8.4.1",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  }
+}
